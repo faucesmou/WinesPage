@@ -1,0 +1,15 @@
+.video-react-button.video-react-big-play-button.video-react-big-play-button-left {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  background-color: transparent;
+}
+.video-react-button.video-react-big-play-button.video-react-big-play-button-left::before {
+  top: 20%;
+}
+.drawerbody::-webkit-scrollbar {
+  display: none;
+}
