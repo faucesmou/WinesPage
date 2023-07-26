@@ -1,6 +1,7 @@
 import BeyondTheWine from "./pages/beyond-the-wine";
 import Landing from "./pages/landing";
 import SingleVineyard from "./pages/single-vineyard";
+import NuestrosVinos from "./pages/nuestros-vinos";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import "swiper/css";
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     path: "/beyondthewine",
     element: <BeyondTheWine />,
   },
+  {
+    path: "/NuestrosVinos",
+    element: <NuestrosVinos />,
+  },
 ]);
 function App() {
   const [cartState, setCartState] = useState([]);
@@ -39,8 +44,7 @@ function App() {
     });
   }, []);
   return (
-    <Box>
-      <p>Hola pepe</p>
+    <Box>  
       <CartContext.Provider value={{ cartState, setCartState }}>
         <StickyCart />
         <RouterProvider router={router} />

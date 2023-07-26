@@ -44,11 +44,10 @@ const Navbar = () => {
         <Link to="/">
           <Image widthidth="263px" height="78px" src={Logo} />
         </Link>
-
         <Box>
           <IconButton
             as={RxHamburgerMenu}
-            ref={btnRef}
+            ref={btnRef} 
             onClick={onOpen}
             w="38px"
             h="38px"
@@ -61,7 +60,8 @@ const Navbar = () => {
             isOpen={isOpen}
             placement="right"
             onClose={onClose}
-            finalFocusRef={btnRef}
+            finalFocusRef={btnRef} 
+               
           >
             <DrawerOverlay />
             <DrawerContent
@@ -96,6 +96,9 @@ const Navbar = () => {
                   </Text>
                   <Text>
                     <Link to="/beyondthewine">Nuestros vinos</Link>
+                  </Text>
+                  <Text>
+                    <Link to="/NuestrosVinos">Gonzalito</Link>
                   </Text>
                   <Text>Tienda online</Text>
                   <Text>Enoteca</Text>

@@ -76,13 +76,11 @@ const StickyCart = () => {
         onClick={onOpen}
       >
         <Flex direction="column" align="center">
-          <IconButton
-            bg="none"
-            _active={{ backgroundColor: "none" }}
-            _hover={{ backgroundColor: "none" }}
+          <Icon
+            as={RiShoppingCartLine}
             w="33px"
             h="33px"
-            as={RiShoppingCartLine}
+            _hover={{ cursor: "pointer" }}
           />
           <Text>{cartState.length}</Text>
         </Flex>
