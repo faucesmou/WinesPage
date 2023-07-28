@@ -44,8 +44,8 @@ function App() {
     });
   }, []);
   return (
-    <Box>  
-      <CartContext.Provider value={{ cartState, setCartState }}>
+    <Box>
+       <CartContext.Provider value={{ cartState, setCartState }}>
         <StickyCart />
         <RouterProvider router={router} />
       </CartContext.Provider>
