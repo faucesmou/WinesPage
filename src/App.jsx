@@ -1,6 +1,7 @@
 import BeyondTheWine from "./pages/beyond-the-wine";
 import Landing from "./pages/landing";
 import SingleVineyard from "./pages/single-vineyard";
+import SingleVineyard2 from "./pages/single-vineyard copy";
 import NuestrosVinos from "./pages/nuestros-vinos";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
     path: "/NuestrosVinos",
     element: <NuestrosVinos />,
   },
+  {
+    path: "/tiendaOnline",
+    element: <SingleVineyard2 />,
+  }
 ]);
 function App() {
   const [cartState, setCartState] = useState([]);

@@ -100,7 +100,9 @@ const Navbar = () => {
                   <Text>
                     <Link to="/NuestrosVinos">Gonzalito</Link>
                   </Text>
-                  <Text>Tienda online</Text>
+                  <Text>
+                  <Link to="/tiendaOnline">Tienda Online</Link>
+                  </Text>
                   <Text>Enoteca</Text>
                   <Text>Quienes somos</Text>
                 </Stack>
