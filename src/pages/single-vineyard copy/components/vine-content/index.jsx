@@ -56,16 +56,40 @@ const wineCardData = [
   },
   {
     image: P2,
-    text: "Single Vineyard ",
-    subText: "Malbec (x6)",
-    price: "9.000",
+    text: "Single Vineyard2 ",
+    subText: "Chardonay (x6)",
+    price: "5.000",
     btnText: "Añadir al carrito",
   },
   {
     image: P3,
-    text: "Single Vineyard ",
+    text: "Núcleo2",
     subText: "Malbec (x6)",
-    price: "9.000",
+    price: "12.000",
+    btnText: "Añadir al carrito",
+  },
+];
+
+const wineCardData2 = [
+  {
+    image: P1,
+    text: "Almarada",
+    subText: "Malbec (x6)",
+    price: "5.000",
+    btnText: "Añadir al carrito",
+  },
+  {
+    image: P2,
+    text: "Almarada",
+    subText: "Cabernet (x6)",
+    price: "6.500",
+    btnText: "Añadir al carrito",
+  },
+  {
+    image: P3,
+    text: "Núcleo",
+    subText: "Malbec (x6)",
+    price: "12.000",
     btnText: "Añadir al carrito",
   },
 ];
@@ -208,7 +232,7 @@ const VineContent = () => {
                 columns={{ base: 1, md: 2, lg: 3 }}
                 spacing={{ base: 5, lg: 14 }}
               >
-                {wineCardData.map(
+                {wineCardData2.map(
                   ({ image, text, subText, price, btnText }, i) => (
                     <CustomWineCard
                       image={image}
@@ -240,7 +264,7 @@ const VineContent = () => {
             waitForTransition: true,
           }} // Add this line for autoplay
         >
-          {wineCardData.map(({ image, text, subText, price, btnText }, i) => (
+          {wineCardData2.map(({ image, text, subText, price, btnText }, i) => (
             <SwiperSlide key={i}>
               <CustomWineCard
                 image={image}
