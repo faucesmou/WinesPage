@@ -175,6 +175,17 @@ const VineContent = () => {
 
   const { cartState, setCartState } = useContext(CartContext);
 
+  /* hovers para que las botellas se agranden  */
+  const [singleVineyardHoveredIndex, setSingleVineyardHoveredIndex] = useState(null);
+  const [nucleoHoveredIndex, setNucleoHoveredIndex] = useState(null);
+  const [almaradaHoveredIndex, setAlmaradaHoveredIndex] = useState(null);
+  const [historiaHoveredIndex, setHistoriaHoveredIndex] = useState(null);
+  const [espumanteHoveredIndex, setEspumanteHoveredIndex] = useState(null);
+
+
+
+
+
   const addToCart = (image, text, price) => {
     const foundItem = cartState.filter((item) => item.text === text)[0];
 
@@ -316,6 +327,9 @@ const VineContent = () => {
                       subText={subText}
                       price={price}
                       btnText={btnText}
+                      onMouseEnter={() => setSingleVineyardHoveredIndex(i)}
+                      onMouseLeave={() => setSingleVineyardHoveredIndex(null)}
+                      isHovered={singleVineyardHoveredIndex === i}
                     >
                       {/* -------------------------> ACÁ HAY UN PROBLEMA PARA AJUSTAR LAS IMAGENES, AL USAR STYLE NO SE CARGAN <img
             className="photo"
@@ -372,6 +386,9 @@ const VineContent = () => {
                       subText={subText}
                       price={price}
                       btnText={btnText}
+                      onMouseEnter={() => setNucleoHoveredIndex(i)}
+                      onMouseLeave={() => setNucleoHoveredIndex(null)}
+                      isHovered={nucleoHoveredIndex === i}
                     />
                   )
                 )}
@@ -427,6 +444,9 @@ const VineContent = () => {
                       subText={subText}
                       price={price}
                       btnText={btnText}
+                      onMouseEnter={() => setAlmaradaHoveredIndex(i)}
+                      onMouseLeave={() => setAlmaradaHoveredIndex(null)}
+                      isHovered={almaradaHoveredIndex === i}
                     />
                   )
                 )}
@@ -477,6 +497,9 @@ const VineContent = () => {
                       subText={subText}
                       price={price}
                       btnText={btnText}
+                      onMouseEnter={() => setHistoriaHoveredIndex(i)}
+                      onMouseLeave={() => setHistoriaHoveredIndex(null)}
+                      isHovered={historiaHoveredIndex === i}
                     />
                   )
                 )}
@@ -531,6 +554,9 @@ const VineContent = () => {
         subText={subText}
         price={price}
         btnText={btnText}
+        onMouseEnter={() => setEspumanteHoveredIndex(i)}
+        onMouseLeave={() => setEspumanteHoveredIndex(null)}
+        isHovered={espumanteHoveredIndex === i}
       />
     </Box>
               )

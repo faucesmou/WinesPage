@@ -186,7 +186,7 @@ const VineContent = () => {
           </Stack>
 
           <Flex alignItems="center">
-            <Text marginRight="10px">Ordenar por: </Text>
+            <Text marginRight="10px" fontWeight="bold" > Ordenar por: </Text>
             <Select
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}

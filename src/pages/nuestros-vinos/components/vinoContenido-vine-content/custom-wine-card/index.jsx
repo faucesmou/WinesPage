@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import { ActionButton } from "../../../../../components/button";
+import './hover.css'; 
 
 const CustomWineCard = ({
   onAddToCart,
@@ -8,15 +9,24 @@ const CustomWineCard = ({
   subText,
   price,
   btnText,
+  onMouseEnter,
+  onMouseLeave,
+  isHovered,
 }) => {
   return (
-    <Box>
+    <Box 
+    position="relative"
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave} 
+    >
       <Flex direction="column" gap={3} align="center">
         <Image
           src={image}
           width={{ base: "150px", lg: "100%" }}
           objectFit="cover"
           height="fit-content"
+          className={isHovered ? 'hovered-image' : ''}
+          transition="transform 0.3s ease-in-out"
         />
         <Stack
           direction="column"
