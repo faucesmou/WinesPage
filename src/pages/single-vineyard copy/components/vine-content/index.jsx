@@ -1,27 +1,4 @@
-import {
-  Box,
-  Button,
-  Divider,
-  Drawer,
-  DrawerBody,
-  DrawerCloseButton,
-  DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  Flex,
-  HStack,
-  Heading,
-  Icon,
-  IconButton,
-  Image,
-  Input,
-  SimpleGrid,
-  Stack,
-  Text,
-  useDisclosure,
-  useToast,
-} from "@chakra-ui/react";
+import {Box,Button,Divider,Drawer,DrawerBody,DrawerCloseButton,DrawerContent,DrawerFooter,DrawerHeader,DrawerOverlay,Flex,HStack,Heading,Icon,IconButton,Image,Input,SimpleGrid,Stack,Text,useDisclosure,Select,useToast,} from "@chakra-ui/react";
 import S1 from "../../../../assets/imgs/s1.png";
 import P1 from "../../../../assets/imgs/p1.png";
 import P2 from "../../../../assets/imgs/p2.png";
@@ -51,7 +28,7 @@ const wineCardData = [
     image: P1,
     text: "Single Vineyard ",
     subText: "Malbec (x6)",
-    price: "9.000",
+    price: "8.000",
     btnText: "Añadir al carrito",
   },
   {
@@ -68,33 +45,48 @@ const wineCardData = [
     price: "12.000",
     btnText: "Añadir al carrito",
   },
-];
-
-const wineCardData2 = [
   {
     image: P1,
-    text: "Almarada",
+    text: "Single Vineyard3",
     subText: "Malbec (x6)",
-    price: "5.000",
+    price: "16.000",
     btnText: "Añadir al carrito",
   },
   {
     image: P2,
-    text: "Almarada",
-    subText: "Cabernet (x6)",
-    price: "6.500",
+    text: "Single Vineyard4",
+    subText: "Chardonay (x6)",
+    price: "2.000",
     btnText: "Añadir al carrito",
   },
   {
     image: P3,
-    text: "Núcleo",
+    text: "Núcleo3",
     subText: "Malbec (x6)",
-    price: "12.000",
+    price: "19.000",
     btnText: "Añadir al carrito",
   },
 ];
 
 const VineContent = () => {
+
+  const [filterType, setFilterType] = useState("menor precio");
+  const filterProducts = () => {
+    let filteredProducts = [...wineCardData];
+
+    if (filterType === "menor precio") {
+      filteredProducts.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+    } else if (filterType === "mayor precio") {
+      filteredProducts.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+    }
+    else if (filterType === "Más vendidos") {
+      filteredProducts.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+    }
+    return filteredProducts;
+  };
+
+
+
   const toast = useToast();
 
   const { cartState, setCartState } = useContext(CartContext);
@@ -193,6 +185,28 @@ const VineContent = () => {
             ></Text>
           </Stack>
 
+          <Flex alignItems="center">
+            <Text marginRight="10px">Ordenar por: </Text>
+            <Select
+              value={filterType}
+              onChange={(e) => setFilterType(e.target.value)}
+              width="200px"
+              fontSize="16px"
+              fontWeight={500}
+              color="bgDark"
+              backgroundColor="rgba(218, 213, 208, 0.975)"
+              variant="outline"
+              alignSelf="center"
+              borderRadius="20px"
+            >
+              <option value="menor precio">Menor Precio</option>
+              <option value="mayor precio">Mayor Precio</option>
+              <option value="Más vendidos">Más vendidos</option>
+              {/* Puedes agregar otros tipos de filtro si lo deseas */}
+            </Select>
+          </Flex>
+
+
           <Divider borderColor="bgDark" />
 
           <Flex
@@ -205,34 +219,7 @@ const VineContent = () => {
                 columns={{ base: 1, md: 2, lg: 3 }}
                 spacing={{ base: 5, lg: 14 }}
               >
-                {wineCardData.map(
-                  ({ image, text, subText, price, btnText }, i) => (
-                    <CustomWineCard
-                      image={image}
-                      key={i}
-                      onAddToCart={() =>  addToCart(image, text, price)}
-                      text={text}
-                      subText={subText}
-                      price={price}
-                      btnText={btnText}
-                      style={{ color: "black" }}
-                    />
-                  )
-                )}
-              </SimpleGrid>
-            </Box>
-          </Flex>
-          <Flex
-            direction="column"
-            gap={8}
-            marginTop={{ base: "10px", lg: "45px" }}
-            marginBottom={{ base: "10px", lg: "30px" }}>
-            <Box display={{ base: "none", sm: "block" }}>
-              <SimpleGrid
-                columns={{ base: 1, md: 2, lg: 3 }}
-                spacing={{ base: 5, lg: 14 }}
-              >
-                {wineCardData2.map(
+                {filterProducts().map(
                   ({ image, text, subText, price, btnText }, i) => (
                     <CustomWineCard
                       image={image}
@@ -249,35 +236,30 @@ const VineContent = () => {
               </SimpleGrid>
             </Box>
           </Flex>
+         
+          <Button
+            bg="rgba(255, 255, 255, 0.5)"
+            border="1px solid"
+            borderColor="rgba(0, 0, 0, 1)"
+            borderRadius="29px"
+            p="26px"
+            fontSize="14px"
+            fontWeight={400}
+            lineHeight="16px"
+            width="100%"
+            maxW="50vw"
+            /* maxWidth="300px"  */
+            /* size="full"  */
+            /* width="fit-content" */
+            color="black"
+            _hover={{ backgroundColor: "#fff", transform: "scale(1.1)" }}
+          >
+            {"Cargar más"}
+          </Button>
+       
         </Flex>
+        
       </Flex>
-      <Box display={{ base: "block", sm: "none" }} pb={10} color="bgDark">
-        <Swiper
-          modules={[Autoplay]}
-          spaceBetween={20}
-          grabCursor={true}
-          loop={true} // Add this line for looping
-          autoplay={{
-            delay: 10000, //sliding duration
-            disableOnInteraction: true,
-            pauseOnMouseEnter: true,
-            waitForTransition: true,
-          }} // Add this line for autoplay
-        >
-          {wineCardData2.map(({ image, text, subText, price, btnText }, i) => (
-            <SwiperSlide key={i}>
-              <CustomWineCard
-                image={image}
-                text={text}
-                subText={subText}
-                price={price}
-                btnText={btnText}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Box>
-
       <Footer />
     </Box>
   );
