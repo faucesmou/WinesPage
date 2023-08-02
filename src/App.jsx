@@ -1,5 +1,6 @@
 import BeyondTheWine from "./pages/beyond-the-wine";
 import Landing from "./pages/landing";
+import Landing2 from "./pages/landing copy";
 import SingleVineyard from "./pages/single-vineyard";
 import SingleVineyard2 from "./pages/single-vineyard copy";
 import NuestrosVinos from "./pages/nuestros-vinos";
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Landing />,
+  },
+  {
+    path: "/QuienesSomos",
+    element: <Landing2 />,
   },
   {
     path: "/singlevineyard",

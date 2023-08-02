@@ -104,7 +104,9 @@ const Navbar = () => {
                   <Link to="/tiendaOnline">Tienda Online</Link>
                   </Text>
                   <Text>Enoteca</Text>
-                  <Text>Quienes somos</Text>
+                  <Text>
+                  <Link to="/QuienesSomos">Quienes somos</Link>
+                  </Text>
                 </Stack>
               </DrawerBody>
             </DrawerContent>
