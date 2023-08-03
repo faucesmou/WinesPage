@@ -22,6 +22,7 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import S1 from "../../../../assets/imgs/s1.png";
 import S2 from "../../../../assets/imgs/s2.png";
 import S3 from "../../../../assets/imgs/s3.png";
@@ -573,6 +574,7 @@ const VineContent = () => {
           // Ajustamos los márgenes para separar el contenedor de "Malbec" del centro
           marginRight={{ base: "10px", md: "20px", lg: "15px" }}
           mt={10} // Espacio arriba del título
+          mb={10}
         >
           
           {/* ... Código existente */}
@@ -586,13 +588,28 @@ const VineContent = () => {
             alignItems="center"
           >
             <Box display={{ base: "none", sm: "block" }}>
-              <SimpleGrid
-                columns={{ base: 1, md: 2, lg: 1 }}
-                spacing={{ base: 5, lg: 14 }}
-              >
-                {<CustomWineCard image={imagenBoton} />}
-              </SimpleGrid>
-            </Box>
+              
+            <Button
+            as={Link} to="/tiendaOnline"
+            bg="rgba(255, 255, 255, 0.5)"
+            border="1px solid"
+            borderColor="rgb(195, 190, 190)"
+            borderRadius="29px"
+            p="26px"
+            fontcolor="white"
+            fontSize="16px"
+            fontWeight={400}
+            lineHeight="16px"
+            width="150%"
+            maxW="50vw"
+            bgColor="black"
+            _hover={{ backgroundColor: "rgba(67, 62, 62, 0.843)", transform: "scale(1.1)" }}
+          >
+            {"Ver tienda Online"}
+          </Button>
+          
+              
+            </Box >
           </Flex>
         </Flex>
       </Flex>

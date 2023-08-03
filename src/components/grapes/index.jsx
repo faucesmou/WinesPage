@@ -6,7 +6,7 @@ import MinGrapes from "../../assets/imgs/minimal-grapes-img.png";
 const GrapesSection = () => {
   return (
     <Box
-      minH={{ base: "100vh", md: "80vh" }}
+      minH={{ base: "100vh", md: "100vh" }}
       width="100%"
       bgImage={{ base: MinGrapes, md: Grapes }}
       bgSize="cover"

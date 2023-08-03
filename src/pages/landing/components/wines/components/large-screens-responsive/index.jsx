@@ -992,7 +992,7 @@ const LargeScreensWines = () => {
             Nuestros vinos
           </Text>
         </Box>
-        <Icon
+        {/* <Icon
           as={HiOutlineArrowLongRight}
           position="absolute"
           fontSize="60px"
@@ -1011,7 +1011,7 @@ const LargeScreensWines = () => {
           color="bgLight"
           className="showArrow3"
           zIndex={999}
-        />
+        /> */}
         <Heading
           className="singleVineyard"
           left="90px"

@@ -95,15 +95,13 @@ const Navbar = () => {
                     <Link to="/singlevineyard">Inicio</Link>
                   </Text>
                   <Text>
-                    <Link to="/beyondthewine">Nuestros vinos</Link>
-                  </Text>
-                  <Text>
-                    <Link to="/NuestrosVinos">Gonzalito</Link>
+                    <Link to="/NuestrosVinos">Nuestros vinos</Link>
                   </Text>
                   <Text>
                   <Link to="/tiendaOnline">Tienda Online</Link>
                   </Text>
-                  <Text>Enoteca</Text>
+                  <Text>
+                  <Link to="/beyondthewine">Enoteca</Link></Text>
                   <Text>
                   <Link to="/QuienesSomos">Quienes somos</Link>
                   </Text>

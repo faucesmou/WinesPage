@@ -137,6 +137,7 @@ const Contact = () => {
                 />
                 <Button
                   alignSelf="flex-end"
+                  color="black"
                   type="submit"
                   bg="transparent"
                   borderRadius="full"

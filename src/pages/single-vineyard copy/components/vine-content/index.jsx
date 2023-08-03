@@ -248,9 +248,6 @@ const VineContent = () => {
             lineHeight="16px"
             width="100%"
             maxW="50vw"
-            /* maxWidth="300px"  */
-            /* size="full"  */
-            /* width="fit-content" */
             color="black"
             _hover={{ backgroundColor: "#fff", transform: "scale(1.1)" }}
           >
