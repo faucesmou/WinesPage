@@ -19,17 +19,19 @@ const SimpleCard = ({ img }) => {
       border="none" // Eliminamos el borde
       color="bgDark"
       width="100%"
-      p={3}	
-	  marginTop="3rem" 
+      p={0}	
+	  marginTop="2rem" 
+	  mb={6} 
 		>
-			<CardHeader p={0} m={0} bg="black">
+			<CardHeader p={0} m={0} bg="black" mb={0} display="flex" justifyContent="center" alignItems="center">
 				<Image 
-				    borderRadius="40%"
+				    borderRadius="42%"
 					src={img}
 					objectFit="cover"
 					width="80%"
-					height="55%" 
-					/> // Ajustamos la altura al 100% para que tenga el mismo tamaño que el CardHeader
+					height="80%" 
+					mb={0} 
+					/> 
 			</CardHeader>
 			
 		</Card>

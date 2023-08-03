@@ -11,7 +11,7 @@ import StickyCart from "../../components/sticky-cart";
 
 const Landing2 = () => {
   return (
-    <Box>
+    <Box >
       <Navbar />
       {/* <Home /> */}
       <HeroSection2 />
