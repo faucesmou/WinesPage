@@ -11,6 +11,7 @@ import {
 import GrandPa from "../../../../assets/imgs/grandpa.png";
 import GrandPa2 from "../../../../assets/imgs/grandpa2.png";
 import GrandPa3 from "../../../../assets/imgs/grandpa3.png";
+import nuestraHistoria1 from "../../../../assets/imgs/historias/nuestraHistoria1.jpg";
 import Titulo from "../../../../assets/imgs/titulo-video.png";
 import Poster1 from "../../../../assets/imgs/slide-cover.png";
 import Poster2 from "../../../../assets/imgs/page1-banner.png";
@@ -91,7 +92,6 @@ const Home = () => {
         )
     );
   }
-
   function prevAnimation() {
     if (keepTrack.current === 1) {
       gsap.killTweensOf(".next-image");
@@ -117,147 +117,129 @@ const Home = () => {
   }
   return (
     <Box bg="bgDark">
-      <SimpleGrid columns={{ base: 1, lg: 2 }} gap={5} pb={{ base: 20, md: 0 }}>
-        <Box width="100%">
-          <Swiper
-            slidesPerView={1}
-            effect={"fade"}
-            autoplay={{
-              delay: 4000,
-              pauseOnMouseEnter: true,
-              waitForTransition: true,
-            }}
-            modules={[EffectFade, Autoplay]}
-            loop={true}
+      <SimpleGrid columns={{ base: 1, lg: 1 }} gap={5} pb={{ base: 20, md: 0 }}>
+        <Box
+          mb={{ base: 130, md: 130 }}
+          height={{ base: "350px", md: "550px" }}
+        >
+          <Flex
+            direction="column"
+            gap={8}
+            bg="black"
+            pt={19}
+            pb={19}
+            color="black"
+            alignItems="center"
+            align="center"
           >
-            <SwiperSlide>
-              <Image
-                objectFit="cover"
-                width="100%"
-                height={{ base: "450px", md: "550px" }}
-                src={GrandPa}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                objectFit="cover"
-                width="100%"
-                height={{ base: "450px", md: "550px" }}
-                src={GrandPa2}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                objectFit="cover"
-                width="100%"
-                height={{ base: "450px", md: "550px" }}
-                src={GrandPa3}
-              />
-            </SwiperSlide>
-          </Swiper>
-        </Box>
-        <Box mb={{ base: 0, md: 2 }} height={{ base: "350px", md: "550px" }}>
-          <Text
-            as="h4"
-            width="fit-content"
-            borderBottom={"2px solid"}
-            borderBottomColor="#ffff"
-            borderBottomWidth="1px"
-            padding={2}
-            ml={2}
-            fontSize="17px"
-            fontWeight={600}
-            letterSpacing="0.01em"
-            lineHeight="26px"
-            color="bgLight"
-          >
-            Enoteca
-          </Text>
-          <Box mt="30px" h={{ base: "60vh" }} overflow="hidden">
-            <Swiper
-              spaceBetween={10}
-              modules={[Navigation]}
-              grabCursor={true}
-              slidesPerView={1}
-              navigation
-            >
-              <SwiperSlide style={{ zIndex: 2 }}>
-                {({ isActive }) => (
+            <Stack direction="column" align="center" gap={5}>
+              <Heading
+                fontStyle="italic"
+                fontWeight={400}
+                color="white"
+                fontSize={{ base: "44px", md: "50px", lg: "70px", xl: "70px" }}
+                lineHeight="1.3"
+                width={{ base: "100%", lg: "100%" }}
+                mx={{ base: "10px", lg: 0 }}
+                textAlign="center"
+                mt={7}
+                mb={7}
+                paddingX={{ base: "13px", lg: "0px" }}
+                /* marginTop={{ base: "10px", lg: "-1px" }}  */
+              >
+                Nuestra Historia
+              </Heading>
+            </Stack>
+          </Flex>
+          <SimpleGrid columns={1} spacing={10}>
+            <Box mt="30px" h={{ base: "100vh" }} overflow="hidden">
+              <Swiper
+                spaceBetween={10}
+                modules={[Navigation]}
+                grabCursor={true}
+                slidesPerView={1}
+                /*   navigation */ //estas son las flechas
+              >
+                {/* Slide Combinado AGREGARLE LOS BREAKING POINT PARA EL RESPONSIVE*/}
+                <SwiperSlide>
                   <Flex
-                    w="100%"
+                    direction="row" // Alinea los elementos en una fila horizontal
+                    justifyContent="flex-start" // Alinea los elementos a la izquierda
+                    align="center"
+                    h={{ base: "60vh" }}
                     position="relative"
-                    gap={6}
-                    pl={{ base: "20px", md: "15px", lg: "20px", xl: "45px" }}
                   >
-                    {isActive && prevAnimation()}
-                    <Stack
-                      direction="column"
-                      gap={10}
-                      justify="center"
-                      align="center"
-                      zIndex={999}
-                    >
-                      <Heading
-                        fontSize={{
-                          base: "60px",
-                          sm: "70px",
-                          md: "100px",
-                          lg: "100px",
-                          xl: "100px",
-                        }}
-                        fontStyle="italic"
-                        color="bgLight"
-                        fontWeight="400"
-                        lineHeight="117%"
-                        position="relative"
-                        height="100%"
-                      >
-                        <Box fontStyle="italic">Historias</Box>
-                        <Box textAlign="end" fontStyle="normal" className="mas">
-                          más{" "}
-                          <Box as="span" fontStyle="italic">
-                            allá{" "}
-                          </Box>
-                        </Box>
-                        <Box as="span" className="vino">
-                          del VINO
-                        </Box>
-                      </Heading>
-                    </Stack>
-                    <Box width="100%">
+                    <Box position="absolute" zIndex={20} left="150px" right="0px" top="20px">
                       <Image
-                        className="titulo-video"
-                        position="absolute"
-                        right={0}
-                        alignSelf="flex-end"
-                        height={{ base: "50vh", md: "60vh" }}
-                        objectFit="contain"
-                        src={Titulo}
+                        src={nuestraHistoria1}
+                        alt="Imagen 1"
+                        width="30%"
+                        objectFit="cover"
+                      />
+                    </Box>
+                    <Box position="absolute" zIndex={20} left="540px" right="0px" top="50px">
+                      <Image
+                        src={nuestraHistoria1}
+                        alt="Imagen 2"
+                        width="50%"
+                        objectFit="cover"
+                      />
+                    </Box>
+                    <Box position="absolute"
+                     zIndex={30} left="980px" 
+                     right="0"  top="100px" 
+                     width="70%"
+                     overflow="hidden">
+                      <Image
+                        src={nuestraHistoria1}
+                        alt="Imagen 3"
+                        width="50%"
+                        objectFit="cover"
                       />
                     </Box>
                   </Flex>
-                )}
-              </SwiperSlide>
-              <SwiperSlide style={{ zIndex: 0 }}>
-                {({ isActive }) => (
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Flex
+                    direction="row" // Alinea los elementos en una fila horizontal
+                    justifyContent="flex-start" // Alinea los elementos a la izquierda
+                    align="center"
+                    h={{ base: "60vh" }}
+                    position="relative"
                   >
-                    {isActive && bringBack()}
-
-                    <HomePlayer img={Poster1} {...playerData[0]} />
-                  </Box>
-                )}
-              </SwiperSlide>
-              <SwiperSlide>
-                <Box>
-                  <HomePlayer img={Poster2} {...playerData[1]} />
-                </Box>
-              </SwiperSlide>
-            </Swiper>
-          </Box>
+                    <Box position="absolute" zIndex={20} left="150px" right="0px" top="20px">
+                      <Image
+                        src={nuestraHistoria1}
+                        alt="Imagen 1"
+                        width="30%"
+                        objectFit="cover"
+                      />
+                    </Box>
+                    <Box position="absolute" zIndex={20} left="540px" right="0px" top="50px">
+                      <Image
+                        src={nuestraHistoria1}
+                        alt="Imagen 2"
+                        width="50%"
+                        objectFit="cover"
+                      />
+                    </Box>
+                    <Box position="absolute"
+                     zIndex={30} left="980px" 
+                     right="0"  top="100px" 
+                     width="70%"
+                     overflow="hidden">
+                      <Image
+                        src={nuestraHistoria1}
+                        alt="Imagen 3"
+                        width="50%"
+                        objectFit="cover"
+                      />
+                    </Box>
+                  </Flex>
+                </SwiperSlide>      
+              </Swiper>
+            </Box>
+          </SimpleGrid>
         </Box>
       </SimpleGrid>
     </Box>

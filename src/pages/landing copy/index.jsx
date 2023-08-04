@@ -13,9 +13,9 @@ const Landing2 = () => {
   return (
     <Box >
       <Navbar />
-      {/* <Home /> */}
       <HeroSection2 />
       <Contact />
+      <Home />
       <Cards />
       <GrapesSection />
     </Box>
