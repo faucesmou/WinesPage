@@ -39,6 +39,7 @@ const CustomWineCard = ({
             border="1px solid"
             borderColor="rgba(0, 0, 0, 1)"
             borderRadius="29px"
+            color="black"
             p="26px"
             fontSize="14px"
             fontWeight={400}
