@@ -48,7 +48,7 @@ const CustomWineCard = ({
             width="fit-content"
             _hover={{ backgroundColor: "#fff", transform: "scale(1.1)" }}
           >
-            {text}
+            {btnText}
           </Button>
         </Box>
       </Flex>

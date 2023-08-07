@@ -57,15 +57,15 @@ const wineCardData = [
   {
     image: P2,
     text: "Single Vineyard ",
-    subText: "Malbec (x6)",
-    price: "9.000",
+    subText: "Chardonay (x6)",
+    price: "15.000",
     btnText: "Añadir al carrito",
   },
   {
     image: P3,
-    text: "Single Vineyard ",
+    text: "Núcleo",
     subText: "Malbec (x6)",
-    price: "9.000",
+    price: "8.000",
     btnText: "Añadir al carrito",
   },
 ];
@@ -303,7 +303,7 @@ const VineContent = () => {
                     <CustomWineCard
                       image={image}
                       key={i}
-                      onAddToCart={() => {}}
+                      onAddToCart={() => addToCart(image, text, price)}
                       text={text}
                       subText={subText}
                       price={price}
