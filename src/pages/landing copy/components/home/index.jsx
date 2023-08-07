@@ -117,9 +117,10 @@ const Home = () => {
   }
   return (
     <Box bg="bgDark">
-      <SimpleGrid columns={{ base: 1, lg: 1 }} gap={5} pb={{ base: 20, md: 0 }}>
+      <SimpleGrid columns={{ base: 1, lg: 1 }} gap={3} pb={{ base: 20, md: 0 }}>
         <Box
-          mb={{ base: 130, md: 130 }}
+          mb={{ base: 150, md: 170 }}
+          mt={{ base: 50, md: 0 }}
           height={{ base: "350px", md: "550px" }}
         >
           <Flex
@@ -143,16 +144,15 @@ const Home = () => {
                 mx={{ base: "10px", lg: 0 }}
                 textAlign="center"
                 mt={7}
-                mb={7}
+                mb={0}
                 paddingX={{ base: "13px", lg: "0px" }}
-                /* marginTop={{ base: "10px", lg: "-1px" }}  */
               >
                 Nuestra Historia
               </Heading>
             </Stack>
           </Flex>
           <SimpleGrid columns={1} spacing={10}>
-            <Box mt="30px" h={{ base: "100vh" }} overflow="hidden">
+            <Box mt="10px" h={{ base: "100vh" }} overflow="hidden">
               <Swiper
                 spaceBetween={10}
                 modules={[Navigation]}
@@ -160,74 +160,252 @@ const Home = () => {
                 slidesPerView={1}
                 /*   navigation */ //estas son las flechas
               >
-                {/* Slide Combinado AGREGARLE LOS BREAKING POINT PARA EL RESPONSIVE*/}
+                {/* Primer Slide de imágenes y texto: -------------------------->*/}
                 <SwiperSlide>
                   <Flex
                     direction="row" // Alinea los elementos en una fila horizontal
                     justifyContent="flex-start" // Alinea los elementos a la izquierda
                     align="center"
-                    h={{ base: "60vh" }}
+                    h={{ base: "150vh" }}
                     position="relative"
                   >
-                    <Box position="absolute" zIndex={20} left="150px" right="0px" top="20px">
+                    <Box
+                      position="absolute"
+                      zIndex={20}
+                      left="210px"
+                      right="0px"
+                      top="20px"
+                    >
                       <Image
                         src={nuestraHistoria1}
                         alt="Imagen 1"
-                        width="30%"
+                        width="35%"
                         objectFit="cover"
                       />
                     </Box>
-                    <Box position="absolute" zIndex={20} left="540px" right="0px" top="50px">
+                    <Box
+                      position="absolute"
+                      zIndex={30}
+                      left="120px"
+                      right="0"
+                      top="260px"
+                      width="30%"
+                      
+                    >
+                      <Text fontSize="25px" color="white">
+                        1968
+                      </Text>
+                    </Box>
+                    <Box
+                      position="absolute"
+                      zIndex={30}
+                      left="120px"
+                      right="0"
+                      top="300px"
+                      width="30%"
+                      
+                    >
+                      <Text fontSize="18px" color="white">
+                      Antonio Más viajó a la Patagonia y transformó el proceso de vinificación en los años siguientes. Puso los cimientos del actual terroir patagónico, ya que comenzó a estudiar las variedades de vino y vinificar las variedades rojas y blancas por separado.
+                      </Text>
+                    </Box>
+                    <Box
+                      position="absolute"
+                      zIndex={24}
+                      left="640px"
+                      right="0px"
+                      top="70px"
+                      width="65%"
+                      height="auto"
+                      display="flex"
+                      alignItems="center"
+                    >
+                      
                       <Image
                         src={nuestraHistoria1}
                         alt="Imagen 2"
                         width="50%"
+                      /*   height="100%" */
                         objectFit="cover"
                       />
                     </Box>
-                    <Box position="absolute"
-                     zIndex={30} left="980px" 
-                     right="0"  top="100px" 
-                     width="70%"
-                     overflow="hidden">
+                    <Box
+                      position="absolute"
+                      zIndex={30}
+                      left="540px"
+                      right="0"
+                      top="320px"
+                      width="30%"
+                      
+                    >
+                      <Text fontSize="25px" color="white">
+                        1992
+                      </Text>
+                    </Box>
+                    <Box
+                      position="absolute"
+                      zIndex={30}
+                      left="540px"
+                      right="0"
+                      top="370px"
+                      width="30%"
+                      
+                    >
+                      <Text fontSize="18px" color="white">
+                      Fundó la primera bodega boutique argentina: Finca La Anita, donde se inspiró en el concepto de Château francés: viñedos de gran pureza genética y variedad, identificando clones de cada variedad, y cultivando uvas y..
+                      </Text>
+                    </Box>
+                    <Box
+                      position="absolute"
+                      zIndex={30}
+                      left="640px"
+                      right="0"
+                      top="20px"
+                      width="30%"
+                      
+                    >
+                      <Text fontSize="25px" color="white"> 
+                        2010
+                      </Text>
+                    </Box>
+                    <Box
+                      position="absolute"
+                      zIndex={26}
+                      left="1110px"
+                      right="0"
+                      top="140px"
+                      width="70%"
+                      overflow="hidden"
+                    >
                       <Image
                         src={nuestraHistoria1}
                         alt="Imagen 3"
                         width="50%"
                         objectFit="cover"
                       />
+                    </Box>
+                    <Box
+                      position="absolute"
+                      zIndex={30}
+                      left="1110px"
+                      right="0"
+                      top="0px"
+                      width="30%"
+                      
+                    >
+                      <Text fontSize="18px" color="white">
+                      Lanzó al mercado Finca Propia: el primer emprendimiento argentino que permitió al consumidor de vino comprar su propia parcela de viñedo y producir su propio vino liderado por Antonio
+                      </Text>
                     </Box>
                   </Flex>
                 </SwiperSlide>
+
+                {/* Segundo Slide de imágenes y texto: ------------------------->*/}
+
                 <SwiperSlide>
                   <Flex
                     direction="row" // Alinea los elementos en una fila horizontal
                     justifyContent="flex-start" // Alinea los elementos a la izquierda
                     align="center"
-                    h={{ base: "60vh" }}
+                    h={{ base: "150vh" }}
                     position="relative"
                   >
-                    <Box position="absolute" zIndex={20} left="150px" right="0px" top="20px">
+                    <Box
+                      position="absolute"
+                      zIndex={20}
+                      left="240px"
+                      right="0px"
+                      top="20px"
+                    >
                       <Image
                         src={nuestraHistoria1}
                         alt="Imagen 1"
-                        width="30%"
+                        width="35%"
                         objectFit="cover"
                       />
                     </Box>
-                    <Box position="absolute" zIndex={20} left="540px" right="0px" top="50px">
+                    <Box
+                      position="absolute"
+                      zIndex={30}
+                      left="240px"
+                      right="0"
+                      top="300px"
+                      width="30%"
+                      
+                    >
+                      <Text fontSize="25px" color="white">
+                        1968
+                      </Text>
+                    </Box>
+                    <Box
+                      position="absolute"
+                      zIndex={30}
+                      left="240px"
+                      right="0"
+                      top="340px"
+                      width="30%"
+                      
+                    >
+                      <Text fontSize="18px" color="white">
+                        Este es el texto a ser personalizado de acuerdo a la historia de la imagen, empresa etc. Se puede modificar de acuerdo a las necesidades.
+                      </Text>
+                    </Box>
+                    <Box
+                      position="absolute"
+                      zIndex={24}
+                      left="660px"
+                      right="0px"
+                      top="70px"
+                      width="65%"
+                      height="auto"
+                      display="flex"
+                      alignItems="center"
+                    >
+                      
                       <Image
                         src={nuestraHistoria1}
                         alt="Imagen 2"
                         width="50%"
+                      /*   height="100%" */
                         objectFit="cover"
                       />
                     </Box>
-                    <Box position="absolute"
-                     zIndex={30} left="980px" 
-                     right="0"  top="100px" 
-                     width="70%"
-                     overflow="hidden">
+                    
+                    <Box
+                      position="absolute"
+                      zIndex={30}
+                      left="660px"
+                      right="0"
+                      top="380px"
+                      width="30%"
+                      
+                    >
+                      <Text fontSize="18px" color="white">
+                      Este es el texto a ser personalizado de acuerdo a la historia de la imagen, empresa etc. Se puede modificar de acuerdo a las necesidades.
+                      </Text>
+                    </Box>
+                    <Box
+                      position="absolute"
+                      zIndex={30}
+                      left="660px"
+                      right="0"
+                      top="20px"
+                      width="30%"
+                      
+                    >
+                      <Text fontSize="25px" color="white"> 
+                        2010
+                      </Text>
+                    </Box>
+                    <Box
+                      position="absolute"
+                      zIndex={26}
+                      left="1130px"
+                      right="0"
+                      top="130px"
+                      width="70%"
+                      overflow="hidden"
+                    >
                       <Image
                         src={nuestraHistoria1}
                         alt="Imagen 3"
@@ -235,8 +413,21 @@ const Home = () => {
                         objectFit="cover"
                       />
                     </Box>
+                    <Box
+                      position="absolute"
+                      zIndex={30}
+                      left="1130px"
+                      right="0"
+                      top="0px"
+                      width="30%"
+                      
+                    >
+                      <Text fontSize="18px" color="white">
+                      Este es el texto a ser personalizado de acuerdo a la historia de la imagen, empresa etc. Se puede modificar de acuerdo a las necesidades.
+                      </Text>
+                    </Box>
                   </Flex>
-                </SwiperSlide>      
+                </SwiperSlide>
               </Swiper>
             </Box>
           </SimpleGrid>
