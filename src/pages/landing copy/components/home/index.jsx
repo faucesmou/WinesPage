@@ -8,13 +8,9 @@ import {
   Heading,
   Icon,
 } from "@chakra-ui/react";
-import GrandPa from "../../../../assets/imgs/grandpa.png";
-import GrandPa2 from "../../../../assets/imgs/grandpa2.png";
-import GrandPa3 from "../../../../assets/imgs/grandpa3.png";
+
 import nuestraHistoria1 from "../../../../assets/imgs/historias/nuestraHistoria1.jpg";
-import Titulo from "../../../../assets/imgs/titulo-video.png";
-import Poster1 from "../../../../assets/imgs/slide-cover.png";
-import Poster2 from "../../../../assets/imgs/page1-banner.png";
+
 
 // swipper css for effects fade to be precise
 import "swiper/css/effect-fade";
@@ -23,7 +19,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectFade, Autoplay, Navigation } from "swiper";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
-import HomePlayer from "./components/player";
 
 import { useState } from "react";
 SwiperCore.use([Navigation]);
@@ -116,7 +111,7 @@ const Home = () => {
     keepTrack.current = 1;
   }
   return (
-    <Box bg="bgDark">
+    <Box bg="bgDark" display={{ base: "none", md: "none", lg: "block" }}>
       <SimpleGrid columns={{ base: 1, lg: 1 }} gap={3} pb={{ base: 20, md: 0 }}>
         <Box
           mb={{ base: 150, md: 170 }}
@@ -172,7 +167,8 @@ const Home = () => {
                     <Box
                       position="absolute"
                       zIndex={20}
-                      left="210px"
+                      left={{ base: "210px", md: "110px", lg: "210px" }} /* esto se puede usar para hacer responsive cada propiedad en toda la línea temporal */
+                      /* left="210px" */
                       right="0px"
                       top="20px"
                     >
@@ -334,7 +330,7 @@ const Home = () => {
                       
                     >
                       <Text fontSize="25px" color="white">
-                        1968
+                        2015
                       </Text>
                     </Box>
                     <Box
@@ -394,7 +390,7 @@ const Home = () => {
                       
                     >
                       <Text fontSize="25px" color="white"> 
-                        2010
+                        2020
                       </Text>
                     </Box>
                     <Box
