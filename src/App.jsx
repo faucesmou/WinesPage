@@ -1,9 +1,9 @@
-import BeyondTheWine from "./pages/beyond-the-wine";
-import Landing from "./pages/landing";
-import Landing2 from "./pages/quienes-somos";
-import SingleVineyard from "./pages/single-vineyard";
-import SingleVineyard2 from "./pages/tienda-online";
-import NuestrosVinos from "./pages/nuestros-vinos";
+import BeyondTheWine from "./pages/beyond-the-wine/index";
+import Landing from "./pages/landing/index";
+import Landing2 from "./pages/quienes-somos/index";
+import SingleVineyard from "./pages/single-vineyard/index";
+import SingleVineyard2 from "./pages/tienda-online/index";
+import NuestrosVinos from "./pages/nuestros-vinos/Index";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import "swiper/css";
