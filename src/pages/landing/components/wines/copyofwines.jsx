@@ -208,7 +208,7 @@ const Wines = () => {
                 onMouseLeave={(e) => handleMouseLeave(e, "n1")}
                 transition="all .1s ease-in"
               >
-                <Image mixBlendMode="luminosity" src={N1} />
+                <Image mixBlendMode="luminosity" src={N2} />
                 <Box ref={n1Icon} transition="all .1s ease-in">
                   <Icon as={AiOutlinePlusCircle} {...plusIconStyles} />
                 </Box>

@@ -10,8 +10,24 @@ import {
   Button,
   AspectRatio,
 } from "@chakra-ui/react";
+import React, { useState } from 'react';
+import axios from 'axios';
+
+
 
 const Contact = () => {
+  const [formData2, setFormData2] = useState({});
+  
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post('/api/submit-form', formData2);
+      console.log("acá van los datos del formulario: ----->");
+      console.log(formData2);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+    }
+  }
   return (
     <Flex direction="column" gap={8} bg="bgLight" pt={10} color="black">
       <Stack direction="column" align="center" gap={3}>
@@ -103,6 +119,13 @@ const Contact = () => {
                   placeholder="*Nombre"
                   _placeholder={{ opacity: 0.4, color: "inherit" }}
                   _hover={{ borderColor: "black" }}
+                  value={formData2.nombre}
+                  onChange={(event) =>
+                    setFormData2((prevData) => ({
+                      ...prevData,
+                      nombre: event.target.value, // Actualiza el campo "nombre" en formData2
+                    }))
+                  }
                 />
                 <Input
                   borderRadius="10px"
@@ -111,6 +134,13 @@ const Contact = () => {
                   placeholder="*Apellido"
                   _placeholder={{ opacity: 0.4, color: "inherit" }}
                   _hover={{ borderColor: "black" }}
+                  value={formData2.apellido}
+                  onChange={(event) =>
+                    setFormData2((prevData) => ({
+                      ...prevData,
+                      apellido: event.target.value, // Actualiza el campo "nombre" en formData2
+                    }))
+                  }
                 />
                 <Input
                   borderRadius={"10px"}
@@ -119,6 +149,13 @@ const Contact = () => {
                   placeholder="*Correo"
                   _placeholder={{ opacity: 0.4, color: "inherit" }}
                   _hover={{ borderColor: "black" }}
+                  value={formData2.correo}
+                  onChange={(event) =>
+                    setFormData2((prevData) => ({
+                      ...prevData,
+                      correo: event.target.value, // Actualiza el campo "nombre" en formData2
+                    }))
+                  }
                 />
                 <Input
                   borderRadius={"10px"}
@@ -127,6 +164,13 @@ const Contact = () => {
                   placeholder="*Asunto"
                   _placeholder={{ opacity: 0.4, color: "inherit" }}
                   _hover={{ borderColor: "black" }}
+                  value={formData2.asunto}
+                  onChange={(event) =>
+                    setFormData2((prevData) => ({
+                      ...prevData,
+                      asunto: event.target.value, // Actualiza el campo "nombre" en formData2
+                    }))
+                  }
                 />
                 <Textarea
                   borderRadius="10px"
@@ -134,6 +178,13 @@ const Contact = () => {
                   placeholder="*Mensaje"
                   borderColor="rgba(0,0,0)"
                   _hover={{ borderColor: "black" }}
+                  value={formData2.mensaje}
+                  onChange={(event) =>
+                    setFormData2((prevData) => ({
+                      ...prevData,
+                      mensaje: event.target.value, // Actualiza el campo "nombre" en formData2
+                    }))
+                  }
                 />
                 <Button
                   alignSelf="flex-end"
@@ -145,6 +196,7 @@ const Contact = () => {
                   borderColor="rgba(0,0,0)"
                   fontWeight="medium"
                   _hover={{ backgroundColor: "white" }}
+                  onClick={handleSubmit}
                 >
                   Enviar
                 </Button>
@@ -155,5 +207,5 @@ const Contact = () => {
       </SimpleGrid>
     </Flex>
   );
-};
+}
 export default Contact;

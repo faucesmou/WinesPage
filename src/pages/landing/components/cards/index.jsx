@@ -5,6 +5,7 @@ import so1 from "../../../../assets/imgs/so1.png";
 import so2 from "../../../../assets/imgs/so2.png";
 import so3 from "../../../../assets/imgs/so3.png";
 import so4 from "../../../../assets/imgs/so4.png";
+import { Link } from "react-router-dom";
 
 const cards = [
   { id: 1, img: so1 },
@@ -22,7 +23,7 @@ const Cards = () => {
             <SimpleCard key={i} img={img} />
           ))}
         </SimpleGrid>
-        <CustomButton text="Cargar mars" />
+        <CustomButton text="Cargar mas" />
       </Box>
     </Box>
   );

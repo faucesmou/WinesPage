@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/playfair-display": "^5.0.2",
     "@fontsource/poppins": "^5.0.2",
+    "axios": "^1.4.0",
     "framer-motion": "^10.12.16",
     "griffith": "^1.30.0",
     "gsap": "^3.11.5",

@@ -18,6 +18,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import axios from 'axios';
 import { useContext, useState } from "react";
 import { BsArrowDownCircle, BsArrowUpCircle } from "react-icons/bs";
 import { RiShoppingCartLine } from "react-icons/ri";
@@ -55,6 +56,16 @@ const StickyCart = () => {
   const getTotalAmount = () => {
     return cartState.reduce((acc, item) => acc + item.price * item.quantity, 0);
   };
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post('/api/submit-carritoCompras', cartState);
+      console.log("acá va el cart state del sticky cart: ----->");
+      console.log(cartState);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error al enviar el cartState del sticky cart:', error);
+    }
+  }
 
   return (
     <Box>
@@ -194,6 +205,7 @@ const StickyCart = () => {
                   width="100%"
                   color="#ffff"
                   height="55px"
+                  onClick={handleSubmit}
                 >
                   Comprar
                 </Button>

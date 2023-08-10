@@ -11,8 +11,24 @@ import {
 } from "@chakra-ui/react";
 import Logo from "../../assets/imgs/logo.png";
 import DefaultIcons from "../social-icons";
+import React, { useState } from 'react';
+import axios from 'axios';
+
 
 const Footer = ({ position = "static" }) => {
+
+  const [formData3, setFormData3] = useState({});
+  
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post('/api/submit-emailfooter', formData3);
+      console.log("acá va el email del footer: ----->");
+      console.log(formData3);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error al enviar el email del Footer:', error);
+    }
+  }
   return (
     <Box
       bg="rgba(30, 30, 30, 0.7)"
@@ -39,9 +55,17 @@ const Footer = ({ position = "static" }) => {
               borderBottom="2px solid"
               borderBottomColor="bgLight"
               _placeholder={{ fontWeight: 300, color: "bgLight" }}
+              value={formData3.email}
+              onChange={(event) =>
+                setFormData3((prevData) => ({
+                  ...prevData,
+                  email: event.target.value, // Actualiza el campo "nombre" en formData3
+                }))
+              }
             />
             <InputRightElement>
-              <Text as="h5">Enviar</Text>
+              <Text as="h5"
+              onClick={handleSubmit}>Enviar</Text>
             </InputRightElement>
           </InputGroup>
         </Flex>
