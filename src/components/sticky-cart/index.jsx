@@ -56,6 +56,12 @@ const StickyCart = () => {
   const getTotalAmount = () => {
     return cartState.reduce((acc, item) => acc + item.price * item.quantity, 0);
   };
+
+  const updatedCartState = cartState.map(item => ({
+    ...item,
+    notaPedido: '', // O inicializa con algún valor predeterminado si es necesario
+  }));
+
   const handleSubmit = async () => {
     try {
       const response = await axios.post('/api/submit-carritoCompras', cartState);
@@ -194,7 +200,17 @@ const StickyCart = () => {
                     fontSize: "15px",
                     color: "bgDark",
                   }}
-                  placeholder="Nota sobre el pedido                                     "
+                  placeholder="Nota sobre el pedido"
+                  value={cartState.notaPedido}
+                  onChange={(event) =>
+                    setCartState((prevCartState) =>
+                    prevCartState.map((item) => ({
+                      ...item,
+                      notaPedido: event.target.value,
+                    }))
+                  )
+                }
+                  
                 />
                 <Button
                   fontSize="15px"
