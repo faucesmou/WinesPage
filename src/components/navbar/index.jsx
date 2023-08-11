@@ -47,7 +47,7 @@ const Navbar = () => {
         <Box>
           <IconButton
             as={RxHamburgerMenu}
-            ref={btnRef} 
+            ref={btnRef}
             onClick={onOpen}
             w="38px"
             h="38px"
@@ -60,13 +60,11 @@ const Navbar = () => {
             isOpen={isOpen}
             placement="right"
             onClose={onClose}
-            finalFocusRef={btnRef} 
-               
+            finalFocusRef={btnRef}
           >
             <DrawerOverlay />
             <DrawerContent
-              bg="rgba(0, 0, 0, 0.8)
-"
+              bg="rgba(0, 0, 0, 0.8)"
             >
               <DrawerCloseButton
                 color="bgLight"
@@ -98,12 +96,13 @@ const Navbar = () => {
                     <Link to="/NuestrosVinos">Nuestros vinos</Link>
                   </Text>
                   <Text>
-                  <Link to="/tiendaOnline">Tienda Online</Link>
+                    <Link to="/tiendaOnline">Tienda Online</Link>
                   </Text>
                   <Text>
-                  <Link to="/beyondthewine">Enoteca</Link></Text>
+                    <Link to="/beyondthewine">Enoteca</Link>
+                  </Text>
                   <Text>
-                  <Link to="/QuienesSomos">Quienes somos</Link>
+                    <Link to="/QuienesSomos">Quienes somos</Link>
                   </Text>
                 </Stack>
               </DrawerBody>

@@ -64,12 +64,18 @@ const StickyCart = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('/api/submit-carritoCompras', cartState);
-      console.log("acá va el cart state del sticky cart: ----->");
-      console.log(cartState);
-      console.log(response.data);
+      const response = await axios.post('/api/submit-carritoCompras' /*, cartState */);
+   /*    console.log("acá va el cart state del sticky cart: ----->");
+      console.log(cartState); */
+      let cristian = response.data;
+      console.log(response.data.url);
+      console.log(cristian);
+      console.log(cristian.url);
+    /*   console.log(cristian[0].url); */
+        // Redirige al usuario a la página de pago de Mobbex con la URL generada
+     /*  window.location.href = response.data.url; */
     } catch (error) {
-      console.error('Error al enviar el cartState del sticky cart:', error);
+      console.error('Error al activar el controlador: ', error);
     }
   }
 
