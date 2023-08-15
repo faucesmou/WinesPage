@@ -20,7 +20,7 @@ const Contact = () => {
   
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://100.20.135.33/api/submit-form', formData2);
+      const response = await axios.post('https://amw.createch.com.ar/api/submit-form', formData2);
       console.log("acá van los datos del formulario: ----->");
       console.log(formData2);
       console.log(response.data);

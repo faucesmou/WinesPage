@@ -21,7 +21,7 @@ const Footer = ({ position = "static" }) => {
   
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://100.20.135.33/api/submit-emailfooter', formData3);
+      const response = await axios.post('https://amw.createch.com.ar/api/submit-emailfooter', formData3);
       console.log("acá va el email del footer: ----->");
       console.log(formData3);
       console.log(response.data);

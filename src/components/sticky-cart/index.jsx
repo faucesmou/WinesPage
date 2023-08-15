@@ -64,7 +64,7 @@ const StickyCart = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://100.20.135.33/api/submit-carritoCompras' /*, cartState (esta variable enviaría la data de la compra) */);
+      const response = await axios.post('https://amw.createch.com.ar/api/submit-carritoCompras' /*, cartState (esta variable enviaría la data de la compra) */);
       let cristian = response.data;
       console.log(cristian);
       const paymentUrl = response.data.data.url;
