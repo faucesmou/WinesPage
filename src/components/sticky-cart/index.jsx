@@ -54,7 +54,7 @@ const StickyCart = () => {
     }
   };
   const getTotalAmount = () => {
-    return cartState.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    return cartState.reduce((acc, item) => acc + parseFloat(item.price) * item.quantity, 0).toFixed(3);
   };
 
   const updatedCartState = cartState.map(item => ({
