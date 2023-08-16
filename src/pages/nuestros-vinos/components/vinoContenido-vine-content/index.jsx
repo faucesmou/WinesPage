@@ -313,7 +313,7 @@ const VineContent = () => {
             marginTop={{ base: "10px", lg: "45px" }}
             marginBottom={{ base: "10px", lg: "30px" }}
           >
-            <Box display={{ base: "none", sm: "block" }}>
+            <Box display={{ base: "10px", lg: "30px" }}> {/* base y lg son los responsive para grande y mobile */}
               <SimpleGrid
                 columns={{ base: 1, md: 2, lg: 3 }}
                 spacing={{ base: 5, lg: 14 }}
@@ -372,7 +372,7 @@ const VineContent = () => {
             marginTop={{ base: "10px", lg: "45px" }}
             marginBottom={{ base: "10px", lg: "30px" }}
           >
-            <Box display={{ base: "none", sm: "block" }}>
+            <Box display={{ base: "10px", lg: "30px" }}>
               <SimpleGrid
                 columns={{ base: 1, md: 2, lg: 3 }}
                 spacing={{ base: 5, lg: 14 }}
@@ -430,7 +430,7 @@ const VineContent = () => {
             marginTop={{ base: "10px", lg: "45px" }}
             marginBottom={{ base: "10px", lg: "30px" }}
           >
-            <Box display={{ base: "none", sm: "block" }}>
+            <Box display={{ base: "10px", lg: "30px" }}>
               <SimpleGrid
                 columns={{ base: 1, md: 2, lg: 3 }}
                 spacing={{ base: 5, lg: 14 }}
@@ -483,7 +483,7 @@ const VineContent = () => {
             marginTop={{ base: "10px", lg: "45px" }}
             marginBottom={{ base: "10px", lg: "30px" }}
           >
-            <Box display={{ base: "none", sm: "block" }}>
+            <Box display={{ base: "10px", lg: "30px" }}>
               <SimpleGrid
                 columns={{ base: 1, md: 2, lg: 3 }}
                 spacing={{ base: 5, lg: 14 }}
@@ -544,9 +544,9 @@ const VineContent = () => {
           >
             {espumanteData.map(
               ({ image, text, subText, price, btnText }, i) => (
-                <Box
+                <Box display={{ base: "10px", lg: "30px" }}
                 key={i}
-      maxWidth="300px" // Ajusta el tamaño máximo deseado para cada contenedor de imagen
+                maxWidth="300px" // Ajusta el tamaño máximo deseado para cada contenedor de imagen
     >
       <CustomWineCard
         image={image}
@@ -575,6 +575,7 @@ const VineContent = () => {
           marginRight={{ base: "10px", md: "20px", lg: "15px" }}
           mt={10} // Espacio arriba del título
           mb={10}
+          
         >
           
           {/* ... Código existente */}
@@ -587,7 +588,7 @@ const VineContent = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <Box display={{ base: "none", sm: "block" }}>
+            <Box display={{ base: "10px", lg: "30px" }}>
               
             <Button
             as={Link} to="/tiendaOnline"
@@ -604,6 +605,8 @@ const VineContent = () => {
             maxW="50vw"
             bgColor="black"
             _hover={{ backgroundColor: "rgba(67, 62, 62, 0.843)", transform: "scale(1.1)" }}
+            my={{ base: 5, md: 0 }} // Ajusta el espacio vertical
+            px={{ base: 15, md: 0 }} // Ajusta el espacio horizontal
           >
             {"Ver tienda Online"}
           </Button>

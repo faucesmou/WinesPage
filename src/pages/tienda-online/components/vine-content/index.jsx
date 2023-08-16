@@ -216,7 +216,7 @@ const VineContent = () => {
             marginTop={{ base: "10px", lg: "45px" }}
             marginBottom={{ base: "10px", lg: "30px" }}>
 
-            <Box display={{ base: "10px", lg: "30px" }}>
+            <Box display={{ base: "10px", lg: "30px" }}> {/* El responsive para pantallas pequeñas */}
               <SimpleGrid
                 columns={{ base: 1, md: 2, lg: 3 }}
                 spacing={{ base: 5, lg: 14 }}
