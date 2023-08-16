@@ -64,9 +64,9 @@ const StickyCart = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('https://amw.createch.com.ar/api/submit-carritoCompras' , cartState /*(esta variable enviaría la data de la compra) */);
-      let cristian = response.data;
-      console.log(cartState);
+      const cartArray = Object.values(cartState);
+      const response = await axios.post('https://amw.createch.com.ar/api/submit-carritoCompras' , cartArray /*(esta variable enviaría la data de la compra) */);
+      console.log(cartArray);
       const paymentUrl = response.data.data.url;
         // Redirige al usuario a la página de pago de Mobbex con la URL de checkout
       window.location.href = paymentUrl;

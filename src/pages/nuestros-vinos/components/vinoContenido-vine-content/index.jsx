@@ -605,8 +605,8 @@ const VineContent = () => {
             maxW="50vw"
             bgColor="black"
             _hover={{ backgroundColor: "rgba(67, 62, 62, 0.843)", transform: "scale(1.1)" }}
-            my={{ base: 5, md: 0 }} // Ajusta el espacio vertical
-            px={{ base: 15, md: 0 }} // Ajusta el espacio horizontal
+            my={{ base: 5, md: 0 }} // Ajusta el espacio vertical en el responsive pequeño
+            px={{ base: 15, md: 0 }} // Ajusta el espacio horizontal en el responsive pequeño
           >
             {"Ver tienda Online"}
           </Button>
